@@ -1,0 +1,4 @@
+﻿  Source.c
+c:\users\catal\desktop\alg\divide et impera\minimul dintr-un vector\minimul dintr-un vector\source.c(20): warning C4013: '_getch' undefined; assuming extern returning int
+  Minimul dintr-un vector.vcxproj -> C:\Users\catal\Desktop\alg\Divide et impera\Minimul dintr-un vector\Debug\Minimul dintr-un vector.exe
+  Minimul dintr-un vector.vcxproj -> C:\Users\catal\Desktop\alg\Divide et impera\Minimul dintr-un vector\Debug\Minimul dintr-un vector.pdb (Full PDB)

@@ -1,0 +1,12 @@
+3
+Fagaras 3
+Gavanului 2120
+Clabucetul 1578
+Moldoveanul 2544
+Rodnei 2
+Pietrosul 2303
+Saca 1705
+Mehedinti 3
+A 2030
+B 1000
+C 3000
