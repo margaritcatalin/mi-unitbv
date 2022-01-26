@@ -1,9 +1,0 @@
-
- Start  Stop   Length Name               Class
-
- 00000H 00027H 00028H SEG_DATE           
- 00030H 00059H 0002AH SEG_COD            
-
-Program entry point at 0003:0000
-Warning: No stack
-
