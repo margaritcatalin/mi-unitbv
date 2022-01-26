@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="CabinetStomatologic.Views.loginUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CabinetStomatologic.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="950">
+    <Border Background="Transparent" BorderThickness="1" BorderBrush="Gainsboro">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.08*"/>
+                <ColumnDefinition Width="0.30*"/>
+                <ColumnDefinition Width="0.35*"/>
+                <ColumnDefinition Width="0.08*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.ColumnSpan="4" Grid.Row="0">
+                <Label x:Name="CurrentTime" Width="200" Height="50" FontFamily="Algerian" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+                <Label Content="Welcome To Dental Clinic Management System" HorizontalAlignment="Center" FontFamily="Algerian" FontSize="25" VerticalAlignment="Bottom"/>
+            </Grid>
+            <Grid Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="3" Width="130" HorizontalAlignment="Left">
+                <Image Source="../images/keys.jpg" Width="130" Height="200" VerticalAlignment="Top"/>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Width="125" Height="30" VerticalAlignment="Bottom">
+                <Label Content="User Name" FontSize="16" FontWeight="Bold" FontFamily="Time New Roman" VerticalAlignment="Top"></Label>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Width="180" Height="30" VerticalAlignment="Bottom">
+                <Border CornerRadius="10" BorderThickness="1" Background="White" BorderBrush="Black" >
+                    <TextBox x:Name="txtName" Width="180" Height="30" TabIndex="1" FontSize="16" FontWeight="Bold" Background="{x:Null}"  BorderThickness="0" SelectionBrush="Black" Padding="4,4,4,4" VerticalAlignment="Top"/>
+                </Border>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Width="125" Height="30" VerticalAlignment="Top" Margin="0,10,0,0">
+                <Label Content="Password"  FontSize="16" FontWeight="Bold" FontFamily="Time New Roman"></Label>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="2" HorizontalAlignment="left" Width="180" Height="30" VerticalAlignment="Top" Margin="0,10,0,0">
+                <Border CornerRadius="10" BorderThickness="1" Background="White" BorderBrush="Black">
+                    <PasswordBox x:Name="txtpassword" BorderThickness="0" FontSize="16" FontWeight="Bold" TabIndex="2" PasswordChar="*"  Width="180" Height="30" Background="{x:Null}" Padding="4,4,4,4" SelectionBrush="Black" VerticalAlignment="Top" KeyDown="txtpassword_KeyDown"/>
+                </Border>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" Width="100" Height="30" VerticalAlignment="Top">
+                <Button x:Name="login_btn" Content="Login" TabIndex="3" BorderThickness="1" FontSize="16" FontWeight="Bold" FontFamily="Time New Roman" Background="White" Click="login_click" Height="30" VerticalAlignment="Bottom"/>
+            </Grid>
+            <Grid Grid.ColumnSpan="4" Grid.Row="3">
+                <Label x:Name="lberror" Height="30" Width="300" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom" Foreground="Red" FontSize="15"/>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
+
