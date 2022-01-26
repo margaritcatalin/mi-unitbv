@@ -1,0 +1,37 @@
+<div class="container">
+
+	<div  class="row">
+	<slideshow [height]="height"
+	[minHeight]="'500px'"
+	[autoPlay]="true"
+	[showArrows]="false"
+	[imageUrls]="imageSources"
+	[lazyLoad]="imageSources?.length > 1"
+	[autoPlayWaitForLazyLoad]="true">
+	</slideshow>	
+</div>
+<hr style="position: absolute;width:85%; height:6px; background-color: #333; z-index:-1; margin-top: -20px;" />
+<hr />
+	<!--BOTTOM-->
+	<div>
+		<div class="home-headline"><span>Featured Cars</span></div>
+		<hr style="margin-top: -15px;" />
+	</div>
+
+	<img class="img-responsive" src="../../../assets/image/road.png" style="margin-top: -5px; z-index:-1;" />
+
+	<div class="row" style="margin:auto; margin-top:-190px; margin-bottom:50px; width:90%;">
+		<div class="col-xs-3">
+			<img class="img-responsive" style="width: 150%;" src="../../../assets/image/car1.png" />
+		</div>
+		<div class="col-xs-3">
+			<img class="img-responsive" style="width: 150%;" src="../../../assets/image/car1.png" />
+		</div>
+		<div class="col-xs-3">
+			<img class="img-responsive" style="width: 150%;" src="../../../assets/image/car1.png" />
+		</div>
+		<div class="col-xs-3">
+			<img class="img-responsive" style="width: 150%;" src="../../../assets/image/car1.png" />
+		</div>
+	</div>
+</div>

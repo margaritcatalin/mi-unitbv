@@ -1,0 +1,48 @@
+export class AppConst {
+	public static serverPathUserManagement = 'http://127.0.0.1:8181';
+	public static serverPathWarehouse = 'http://127.0.0.1:8282';
+	public static serverPathBilling = 'http://127.0.0.1:8383';
+	public static judete = {
+		"AB": "Alba",
+		"AR": "Arad",
+		"AG": "Arges",
+		"BC": "Bacau",
+		"BH": "Bihor",
+		"BN": "Bistrita Nasaud",
+		"BT": "Botosani",
+		"BR": "Braila",
+		"B": "Bucuresti/Ilfov",
+		"BZ": "Buzau",
+		"BV": "Brasov",
+		"CS": "Caras Severin",
+		"CL": "Calarasi",
+		"CJ": "Cluj",
+		"CT": "Constanta",
+		"CV": "Covasna",
+		"DB": "Dambovita",
+		"DJ": "Dolj",
+		"GL": "Galati",
+		"GR": "Giurgiu",
+		"GJ": "Gorj",
+		"HR": "Harghita",
+		"HD": "Hunedoara",
+		"IL": "Ialomita",
+		"IS": "Iasi",
+		"MM": "Maramures",
+		"MH": "Mehedinti",
+		"MS": "Mures",
+		"NT": "Neamt",
+		"OT": "Olt",
+		"PH": "Prahova",
+		"SM": "Satu Mare",
+		"SJ": "Salaj",
+		"SB": "Sibiu",
+		"SV": "Suceava",
+		"TR": "Teleorman",
+		"TM": "Timis",
+		"TL": "Tulcea",
+		"VS": "Vaslui",
+		"VL": "Valcea",
+		"VN": "Vrancea"
+	}
+}

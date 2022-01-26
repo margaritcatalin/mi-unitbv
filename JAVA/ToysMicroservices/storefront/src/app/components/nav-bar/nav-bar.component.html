@@ -1,0 +1,34 @@
+
+<nav class="navbar navbar-default navbar-inverse">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand pointer" routerLink="/home">CarStore</a>
+		</div>
+
+		<div id="navbar">
+			<ul class="nav navbar-nav navbar-left">
+				<li><a mat-button routerLink="/carList">Cars</a></li>
+				<form (ngSubmit)="onSearchByName()" class="navbar-form">
+					<div class="form-group">
+						<input type="text" name="searcyByName" [(ngModel)]="keyword" class="form-control" placeholder="Car Name" />
+					</div>
+					<button type="submit" class="btn btn-default">Search</button>
+				</form>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li *ngIf="!loggedIn">
+					<a mat-button routerLink="/myAccount">MY ACCOUNT</a>
+				</li>
+				<li *ngIf="loggedIn">
+					<a mat-button routerLink="/shoppingCart">SHOPPING CART</a>
+				</li>
+				<li *ngIf="loggedIn">
+					<a mat-button routerLink="/myProfile">MY PROFILE</a>
+				</li>
+				<li *ngIf="loggedIn">
+					<a mat-button (click)="logout()">LOGOUT</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

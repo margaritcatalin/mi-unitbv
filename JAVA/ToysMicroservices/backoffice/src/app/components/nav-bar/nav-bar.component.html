@@ -1,0 +1,7 @@
+<mat-toolbar color="primary">
+	<h3 [style.color]="'white'">Backoffice</h3>
+	<span class="example-spacer"></span>
+	<span [hidden]="!loggedIn"><a mat-button routerLink="/carList">View Car List</a></span>
+	<span [hidden]="!loggedIn"><a mat-button routerLink="/addNewCar">Add a Car</a></span>
+	<span [hidden]="!loggedIn"><a mat-button (click)="logout()">Logout</a></span>
+</mat-toolbar>

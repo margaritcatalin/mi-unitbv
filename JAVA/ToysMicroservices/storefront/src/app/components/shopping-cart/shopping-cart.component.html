@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row" style="margin-top: 120px;">
+        <div class="col-xs-12">
+            <div *ngIf="cartItemUpdated" class="alert alert-success">
+                Cart Item Updated Successfully!
+            </div>
+            <div *ngIf="notEnoughStock" class="alert alert-warning">
+                Oops, some of the products don't have enough stock. Please update product quantity.
+            </div>
+            <div *ngIf="emptyCart" class="alert alert-warning">
+                Oops, your cart is empty. See if you can find what you link in the store and add them to cart.
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+                    <h4>Products</h4>
+                </div>
+                <div class="col-xs-2">
+                    <h4>Price</h4>
+                </div>
+                <div class="col-xs-2">
+                    <h4>Qty</h4>
+                </div>
+            </div>
+            <div class="row" *ngFor="let cartItem of cartItemList">
+                <hr/>
+                <div class="col-xs-2">
+                    <a md-button (click)="onSelect(cartItem.car)"><img class="img-responsive" src="{{serverPathBilling}}/image/car/{{cartItem.car.id}}.png" style="width:70px;" /></a>
+                </div>
+                <div class="col-xs-6">
+                    <a class="pointer" (click)="onSelect(cartItem.car)">
+                        <h4>{{cartItem.car.name}}</h4></a>
+                    <p *ngIf="cartItem.car.inStockNumber > 10" style="color:green;">In Stock</p>
+                    <p *ngIf="cartItem.car.inStockNumber < 10 && cartItem.car.inStockNumber > 0" style="color:green;">Only <span>{{cartItem.car.inStockNumber}}</span> In Stock</p>
+                    <p *ngIf="cartItem.car.inStockNumber == 0" style="color:darkred;">Product Unavailable</p>
+                    <a class="pointer" (click)="onRemoveCartItem(cartItem)">delete</a>
+                </div>
+                <div class="col-xs-2">
+                    <h5 style="color:#db3208; font-size:large;">$<span [ngClass]="{'text-strike': cartItem.car.inStockNumber == 0}">{{cartItem.car.ourPrice}}</span>
+            			</h5>
+                </div>
+                <div class="col-xs-2">
+                    <input hidden="hidden" name="id" [(ngModel)]="cartItem.id" />
+                    <input id="cartItem.id" name="qty" [disabled]="cartItem.car.inStockNumber==0" class="form-control cartItemQty" [(ngModel)]="cartItem.qty" (ngModelChange)="cartItem.toUpdate=true" />
+                    <a md-button *ngIf="cartItem.toUpdate" class="pointer mat-warn" (click)="onUpdateCartItem(cartItem)">Update</a>
+                </div>
+            </div>
+            <div class="row">
+                <hr />
+                <h4 class="col-xs-12 text-right"><strong style="font-size: large">Total Price (<span>{{cartItemNumber}}</span> items): </strong><span style="color:#db3208;font-size: large">$ <span>{{shoppingCart.grandTotal}}</span></span></h4>
+            </div>
+            <br>
+            <div class="row">
+                    <div class="col-xs-6 text-right">
+                        <a md-raised-button class="mat-warn" routerLink="/carList"><img src="../../../assets/image/cs-button.png" style="width: 180px; height: 60px;"></a>
+                    </div>
+                    <div class="col-xs-6 text-left">
+                        <a md-raised-button class="mat-warn" routerLink="/checkout"><img src="../../../assets/image/checkout-button.png" style="width: 180px; height: 60px;"></a>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

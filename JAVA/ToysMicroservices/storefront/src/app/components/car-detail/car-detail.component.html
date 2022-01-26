@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="row" style="margin-top: 40px;">
+            <div class="col-xs-3">
+                <a routerLink="/carList">Back to car list</a>
+                <br />
+                <img class="img-responsive" src="{{serverPathWarehouse}}/image/car/{{car.id}}.png" />
+            </div>
+            <div class="col-xs-9">
+                <h3><span *ngIf="addCarSuccess" style="color:forestgreen"><i class="fa fa-check" style="color:forestgreen"></i>Added to cart.</span></h3>
+                <h3><span *ngIf="notEnoughStock" style="color:red">Oops, only <span>{{car.inStockNumber}}</span> In Stock.</span> </h3>
+                <h3>{{car.name}}</h3>
+                <div class="row">
+                    <div class="col-xs-5">
+                        <h5><strong>Producator: </strong><span>{{car.producator}}</span></h5>
+                        <p><strong>Material:</strong><span>{{car.material}}</span></p>
+                        <p><strong>Category:</strong><span>{{car.category}}</span></p>
+                        <p><strong>Destinat pentru varsta:</strong> <span>{{car.varsta}}</span> ani</p>
+                        <p><strong>Shipping Weight:</strong> <span>{{car.shippingWeight}}</span> ounces</p>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="panel panel-default" style="border-width:5px; margin-top:20px;">
+                            <div class="panel-body">
+                                <div class="col-xs-6">
+                                    <h4>Our Price: <span style="color: #db3208;">$<span>
+            						{{car.ourPrice | number : '1.2-2'}} <!-- number: for decimal format-->
+            					</span></span></h4>
+                                    <p>List Price: <span style="text-decoration:line-through;">$<span>{{car.listPrice | number : '1.2-2'}}</span></span>
+                                    </p>
+                                    <p>You Save: $<span>{{car.listPrice-car.ourPrice | number : '1.2-2'}}</span></p>
+                                    <span>Qty: </span>
+                                    <select [(ngModel)]="qty" class="browser-default" style="width:50px; display:inline;">
+                                        <option *ngFor="let x of numberList" [ngValue]="x">{{x}}</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6">
+                                    <h4 *ngIf="car.inStockNumber>10" style="color:green;">In Stock</h4>
+            					<h4 *ngIf="car.inStockNumber<10 && car.inStockNumber>0" style="color:green;">Only <span>{{car.inStockNumber}}</span> In Stock</h4>
+            					<h4 *ngIf="car.inStockNumber==0" style="color:darkred;">Unavailable</h4>
+            					<button mat-raised-button [disabled]="car.inStockNumber==0" (click)="onAddToCart()" class="mat-primary">Add to Cart</button>
+            				</div>
+            			</div>
+            				
+            			</div>
+            		</div>
+            	</div>
+            </div>
+
+            <hr />
+            <p>{{car.description}}</p>
+        </div>
+    </div>
+</div>
+
+
